@@ -54,3 +54,15 @@
 2025-12-21 15:58 - INFO - Synchronization started
 2025-12-21 15:58 - INFO - Created a folder 1 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
 2025-12-21 15:58 - INFO - Synchronization finihed
+2025-12-21 16:02 - INFO - Synchronization started
+2025-12-21 16:02 - INFO - Synchronization finihed
+2025-12-21 16:38 - INFO - Synchronization started
+2025-12-21 16:38 - INFO - Created a folder 5 from /home/vafanaso/Veeam/src/1/ to /home/vafanaso/Veeam/replica/1/
+2025-12-21 16:38 - INFO - Copied the file hello.py from /home/vafanaso/Veeam/src/1/5/ to /home/vafanaso/Veeam/replica/1/5/ 
+2025-12-21 16:38 - INFO - Synchronization finihed
+2025-12-21 16:38 - INFO - Synchronization started
+2025-12-21 16:38 - INFO - Copied the file kio from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-21 16:38 - INFO - Synchronization finihed
+2025-12-21 16:38 - INFO - Synchronization started
+2025-12-21 16:38 - INFO - Deleted a folder 5 from /home/vafanaso/Veeam/replica/1/
+2025-12-21 16:38 - INFO - Synchronization finihed

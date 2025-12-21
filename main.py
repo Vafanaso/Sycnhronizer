@@ -5,17 +5,7 @@ import hashlib
 import shutil
 import logging
 
-SCRIPT_NAME = sys.argv[0]
-SRC_PATH = sys.argv[1]
-REPLICA_PATH = sys.argv[2]
-INTERVAL = float(sys.argv[3])
-SYNC_COUNT = int(sys.argv[4])
-LOG_PATH = sys.argv[5]
 
-#checking if there is '/' in the end of paths, adding if not
-for path in {SRC_PATH,REPLICA_PATH}:
-    if path[-1] != '/':
-        path += '/'
 
 def log_setup(log_path):
     """
@@ -115,14 +105,11 @@ def hash_check(src_path:str, dst_path:str, logger) -> None:
     :param dst_path:str - path to replica or dst folder
     :return: None
     """
-    src_content = os.listdir(src_path)
-    dst_content = os.listdir(dst_path)
-
-
     #Going through the content and comparing their hash, deleting and copying if hash is different
-    for index in range(len(src_content)):
-        current_src_filepath:str = src_path + src_content[index]
-        current_dst_filepath: str = dst_path + dst_content[index]
+    for name in os.listdir(src_path):
+        current_src_filepath: str = os.path.join(src_path, name)
+        current_dst_filepath: str = os.path.join(dst_path, name)
+        #Recursion if the current path points to folder
         if os.path.isdir(current_src_filepath):
             hash_check(current_src_filepath + '/', current_dst_filepath + '/', logger)
             continue
@@ -156,13 +143,24 @@ def folder_sync(src_path:str, dst_path:str, logger):
 
 
 def main():
+    scrip_name = sys.argv[0]
+    # checking if there is '/' in the end of paths, adding if not
+    src_path = sys.argv[1] + '/' if sys.argv[1][-1] != '/' else sys.argv[1]
+    replica_path = sys.argv[2] + '/' if sys.argv[2][-1] != '/' else sys.argv[2]
+    interval = float(sys.argv[3])
+    sync_count = int(sys.argv[4])
+    log_path = sys.argv[5] + '/' if sys.argv[5][-1] != '/' else sys.argv[5]
 
-    logger = log_setup(LOG_PATH)
+    # checking if there is '/' in the end of paths, adding if not
+
+
+
+    logger = log_setup(log_path)
     logger.info("Synchronization started")
-    for  i in range(SYNC_COUNT):
-        folder_sync(SRC_PATH, REPLICA_PATH,logger)
-        if i < (SYNC_COUNT - 1):
-            time.sleep(INTERVAL)
+    for  i in range(sync_count):
+        folder_sync(src_path, replica_path,logger)
+        if i < (sync_count - 1):
+            time.sleep(interval)
     logger.info("Synchronization finihed")
 
 
