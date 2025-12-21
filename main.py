@@ -22,20 +22,22 @@ def log_setup(log_path):
     file_handler = logging.FileHandler(log_path)
     console_handler.setFormatter(formatter)
     file_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
-    logger.addHandler(file_handler)
+    if not logger.handlers:
+        logger.addHandler(console_handler)
+        logger.addHandler(file_handler)
     return logger
 
 #makaing a hash for file
 def hashing(file_path:str) -> str:
     """
-    Makes a hash  for a file at given path
+    Makes a hash  for a file at given path, reads up to 4096 bytes at a time
     :param file_path:str - a pth to the file which is goint to be given a hash
     :return: hash of a file at file_path
     """
+    hash_num = hashlib.md5()
     with open(file_path, "rb") as f:
-        content:bytes = f.read()
-        hash_num = hashlib.md5(content)
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_num.update(chunk)
         return hash_num.hexdigest()
 
 
@@ -149,7 +151,7 @@ def main():
     replica_path = sys.argv[2] + '/' if sys.argv[2][-1] != '/' else sys.argv[2]
     interval = float(sys.argv[3])
     sync_count = int(sys.argv[4])
-    log_path = sys.argv[5] + '/' if sys.argv[5][-1] != '/' else sys.argv[5]
+    log_path = sys.argv[5]
 
     # checking if there is '/' in the end of paths, adding if not
 
