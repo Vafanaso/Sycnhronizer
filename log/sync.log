@@ -1,0 +1,56 @@
+2025-12-21 15:14 - INFO - Synchronization started
+2025-12-21 15:15 - INFO - Synchronization started
+2025-12-21 15:15 - INFO - Synchronization finihed
+2025-12-21 15:22 - INFO - Synchronization started
+2025-12-21 15:22 - INFO - Deleted fefwfewf from /home/vafanaso/Veeam/replica/
+2025-12-21 15:23 - INFO - Synchronization started
+2025-12-21 15:23 - INFO - Synchronization finihed
+2025-12-21 15:23 - INFO - Synchronization started
+2025-12-21 15:23 - INFO - Deleted 2 from /home/vafanaso/Veeam/replica/
+2025-12-21 15:23 - INFO - Synchronization finihed
+2025-12-21 15:35 - INFO - Synchronization started
+2025-12-21 15:35 - INFO - Synchronization started
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/ner /Kto ya  form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/ner /Kto ya  to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/saty.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/saty.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/helo.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/helo.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/file1.py form replica, due to different content, copied /home/vafanaso/Veeam/src/file1.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/Check if it will copu1 form replica, due to different content, copied /home/vafanaso/Veeam/src/Check if it will copu1 to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/ner /Kto ya  form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/ner /Kto ya  to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/saty.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/saty.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/helo.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/helo.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/file1.py form replica, due to different content, copied /home/vafanaso/Veeam/src/file1.py to replica
+2025-12-21 15:35 - INFO - Removed /home/vafanaso/Veeam/replica/Check if it will copu1 form replica, due to different content, copied /home/vafanaso/Veeam/src/Check if it will copu1 to replica
+2025-12-21 15:35 - INFO - Synchronization finihed
+2025-12-21 15:36 - INFO - Synchronization started
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/ner /Kto ya  form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/ner /Kto ya  to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/saty.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/saty.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/helo.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/helo.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/file1.py form replica, due to different content, copied /home/vafanaso/Veeam/src/file1.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/Check if it will copu1 form replica, due to different content, copied /home/vafanaso/Veeam/src/Check if it will copu1 to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/ner /Kto ya  form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/ner /Kto ya  to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/saty.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/saty.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/helo.py form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/helo.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/file1.py form replica, due to different content, copied /home/vafanaso/Veeam/src/file1.py to replica
+2025-12-21 15:36 - INFO - Removed /home/vafanaso/Veeam/replica/Check if it will copu1 form replica, due to different content, copied /home/vafanaso/Veeam/src/Check if it will copu1 to replica
+2025-12-21 15:36 - INFO - Synchronization finihed
+2025-12-21 15:42 - INFO - Synchronization started
+2025-12-21 15:42 - INFO - Synchronization finihed
+2025-12-21 15:43 - INFO - Synchronization started
+2025-12-21 15:43 - INFO - Deleted file delte from /home/vafanaso/Veeam/replica/folder1/ner /
+2025-12-21 15:43 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/folder1/ner / to /home/vafanaso/Veeam/replica/folder1/ner / 
+2025-12-21 15:43 - INFO - Removed /home/vafanaso/Veeam/replica/folder1/ner /Kto ya  form replica, due to different content, copied /home/vafanaso/Veeam/src/folder1/ner /Kto ya  to replica
+2025-12-21 15:43 - INFO - Synchronization finihed
+2025-12-21 15:44 - INFO - Synchronization started
+2025-12-21 15:44 - INFO - Copied the file file1.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-21 15:44 - INFO - Copied the file Check if it will copu1 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-21 15:45 - INFO - Synchronization finihed
+2025-12-21 15:45 - INFO - Synchronization started
+2025-12-21 15:45 - INFO - Removed /home/vafanaso/Veeam/replica/Check if it will copu1 form replica, due to different content, copied /home/vafanaso/Veeam/src/Check if it will copu1 to replica
+2025-12-21 15:45 - INFO - Synchronization finihed
+2025-12-21 15:58 - INFO - Synchronization started
+2025-12-21 15:58 - INFO - Deleted file Check if it will copu1 from /home/vafanaso/Veeam/replica/
+2025-12-21 15:58 - INFO - Deleted file file1.py from /home/vafanaso/Veeam/replica/
+2025-12-21 15:58 - INFO - Synchronization finihed
+2025-12-21 15:58 - INFO - Synchronization started
+2025-12-21 15:58 - INFO - Created a folder 1 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-21 15:58 - INFO - Synchronization finihed
