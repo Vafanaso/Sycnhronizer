@@ -5,13 +5,31 @@ import hashlib
 import shutil
 import logging
 
+def folder_check(src_path:str, replica_path:str, logger) -> bool:
+    """
+
+    folder_check function checks if the paths are valid
+
+    :param src_path:str -
+    :param replica_path: str -
+    :param logger:
+    :return: True if paths are valid and false if not
+    """
+    if not os.path.isdir(src_path):
+        logger.error(f'No source folder ant the {src_path}')
+        return False
+    if not os.path.isdir(replica_path):
+        logger.error(f'No replica folder ant the {replica_path}')
+        return False
+
+    return True
 
 
 def log_setup(log_path):
     """
     seting up the logger for log file and console
     :param log_path:
-    :return:
+    :return: logger
     """
     logger = logging.getLogger('sync')
     logger.setLevel(logging.INFO)
@@ -35,6 +53,7 @@ def hashing(file_path:str) -> str:
     :return: hash of a file at file_path
     """
     hash_num = hashlib.md5()
+    #in case of big file size read first 4096 bytes
     with open(file_path, "rb") as f:
         for chunk in iter(lambda: f.read(4096), b""):
             hash_num.update(chunk)
@@ -43,28 +62,28 @@ def hashing(file_path:str) -> str:
 
 
 
-def copy_differnce(src_path:str, dst_path:str, logger) -> None:
+def copy_differnce(src_path:str, replica_path:str, logger) -> None:
     """
     Function is designed to copy files from src if they are absent in dst,
     and to delete content that exists only in dst.
 
     :param src_path:str - path to src folder
-    :param dst_path:str - path to replica or dst folder
+    :param replica_path:str - path to replica or dst folder
     :return: None
     """
 
     # Creating a lists of content in both folders
     src_content = os.listdir(src_path)
-    dst_content = os.listdir(dst_path)
+    replica_content = os.listdir(replica_path)
 
     # checking the difference in folders content via operations with sets
-    if src_content != dst_content:
+    if set(src_content) != set(replica_content):
 
         # a set of files/folders that exist only in src, and need to be added to dst
-        diff_src = set(src_content) - set(dst_content)
+        diff_src = set(src_content) - set(replica_content)
 
         # a set of files that are unoque to both folders
-        dif_src_and_dst = set(src_content) ^ set(dst_content)
+        dif_src_and_dst = set(src_content) ^ set(replica_content)
 
         # a set of name of the files that exist only in dst folder, and need to be deleted
         to_delete = dif_src_and_dst - diff_src
@@ -72,30 +91,34 @@ def copy_differnce(src_path:str, dst_path:str, logger) -> None:
         # deleting files from dst
         if len(to_delete) != 0:
             for name in to_delete:
-                if os.path.isdir(dst_path + name):
-                    shutil.rmtree(dst_path + name)
-                    logger.info(f"Deleted a folder {name} from {dst_path}")
+                delete_replica_path = os.path.join(replica_path, name)
+                # checking if we need to remove folder or file
+                if os.path.isdir(delete_replica_path):
+                    shutil.rmtree(delete_replica_path)
+                    logger.info(f"Deleted a folder {name} from {replica_path}")
                 else:
-                    os.remove(dst_path + name)
-                    logger.info(f"Deleted file {name} from {dst_path}")
+                    os.remove(delete_replica_path)
+                    logger.info(f"Deleted file {name} from {replica_path}")
 
         # copying src's unique files and folders to dst
         if len(diff_src) != 0:
             for name in diff_src:
-                if not os.path.isdir(src_path + name):
-                    shutil.copy(src_path + name, dst_path)
-                    # print(f'copied {src_path + name} to {dst_path}')
-                    logger.info(f'Copied the file {name} from {src_path} to {dst_path} ')
-                elif os.path.isdir(src_path + name):
-                    os.mkdir(dst_path + name)
-                    # print(f'created a folder in replica {dst_path + name}')
-                    logger.info(f'Created a folder {name} from {src_path} to {dst_path}')
+                new_src_path = os.path.join(src_path,name)
+                if not os.path.isdir(new_src_path):
+                    shutil.copy(new_src_path, replica_path)
+                    logger.info(f'Copied the file {name} from {src_path} to {replica_path} ')
+                elif os.path.isdir(new_src_path):
+                    new_replica_path = os.path.join(replica_path,name)
+                    os.mkdir(new_replica_path)
+                    logger.info(f'Copied a folder {name} from {src_path} to {replica_path}')
                     #Recursive folder_synchronization
-                    copy_differnce(src_path + name + '/', dst_path + name + '/', logger)
+                    copy_differnce(new_src_path, new_replica_path, logger)
     else:
-        for folder in src_content:
-            if os.path.isdir(src_path + folder) :
-                copy_differnce(src_path + folder + '/', dst_path + folder + '/',logger)
+        for folder_name in src_content:
+            new_src_path = os.path.join(src_path, folder_name)
+            new_replica_path = os.path.join(replica_path, folder_name)
+            if os.path.isdir(new_src_path) :
+                copy_differnce(new_src_path, new_replica_path, logger)
 
 
 
@@ -113,11 +136,12 @@ def hash_check(src_path:str, dst_path:str, logger) -> None:
         current_dst_filepath: str = os.path.join(dst_path, name)
         #Recursion if the current path points to folder
         if os.path.isdir(current_src_filepath):
-            hash_check(current_src_filepath + '/', current_dst_filepath + '/', logger)
+            hash_check(current_src_filepath, current_dst_filepath, logger)
             continue
         if hashing(current_src_filepath) == hashing(current_dst_filepath):
             continue
         else:
+            #if files are not the same, remove it from replica and copy from src
             os.remove(current_dst_filepath)
             shutil.copy(current_src_filepath, dst_path)
             logger.info(f'Removed {current_dst_filepath} form replica, due to different content, copied {current_src_filepath} to replica')
@@ -134,6 +158,7 @@ def folder_sync(src_path:str, dst_path:str, logger):
     :param: srt_path, dst_path (str) - the paths to the src and dst folders
     :return: None, the function doesn't return anything, but makes dst an exact copy of src
     """
+
     copy_differnce(src_path,dst_path, logger)
 
 
@@ -145,6 +170,17 @@ def folder_sync(src_path:str, dst_path:str, logger):
 
 
 def main():
+    """
+    -akes arguments from CL
+    -checks if paths have '/' in the end
+    -setups a logger
+    -checks if paths are correct
+    -starts a loop of in range of  sync_count
+    -syncs 2 folders
+    -sleeps for the given interval
+
+    :return: synchronizes folders if they exist
+    """
     scrip_name = sys.argv[0]
     # checking if there is '/' in the end of paths, adding if not
     src_path = sys.argv[1] + '/' if sys.argv[1][-1] != '/' else sys.argv[1]
@@ -153,17 +189,23 @@ def main():
     sync_count = int(sys.argv[4])
     log_path = sys.argv[5]
 
-    # checking if there is '/' in the end of paths, adding if not
+
 
 
 
     logger = log_setup(log_path)
-    logger.info("Synchronization started")
-    for  i in range(sync_count):
-        folder_sync(src_path, replica_path,logger)
-        if i < (sync_count - 1):
-            time.sleep(interval)
-    logger.info("Synchronization finihed")
+
+
+    #checking if folders do exist
+    if folder_check(src_path,replica_path,logger):
+        logger.info("Synchronization started")
+        for  i in range(sync_count):
+            folder_sync(src_path, replica_path,logger)
+            if i < (sync_count - 1):
+                time.sleep(interval)
+        logger.info("Synchronization finihed")
+    else:
+        logger.info(f"Unable to start syncro, {src_path} or {replica_path} does not exist")
 
 
 if __name__ == "__main__":

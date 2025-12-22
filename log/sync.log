@@ -41,3 +41,122 @@
 2025-12-21 17:31 - INFO - Copied the file 4.py from /home/vafanaso/Veeam/src/1/2/3/ to /home/vafanaso/Veeam/replica/1/2/3/ 
 2025-12-21 17:31 - INFO - Created a folder 5 from /home/vafanaso/Veeam/src/1/2/ to /home/vafanaso/Veeam/replica/1/2/
 2025-12-21 17:31 - INFO - Synchronization finihed
+2025-12-21 17:39 - INFO - Synchronization started
+2025-12-21 17:39 - INFO - Synchronization finihed
+2025-12-21 17:40 - INFO - Synchronization started
+2025-12-21 17:41 - INFO - Synchronization started
+2025-12-21 17:41 - INFO - Copied the file 4.py from /home/vafanaso/Veeam/src/1/2/3/ to /home/vafanaso/Veeam/replica/1/2/3/ 
+2025-12-21 17:41 - INFO - Deleted file delete.py from /home/vafanaso/Veeam/replica/1/2/5/
+2025-12-21 17:41 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/1/2/5/ to /home/vafanaso/Veeam/replica/1/2/5/ 
+2025-12-21 17:41 - INFO - Synchronization finihed
+2025-12-21 17:42 - INFO - Synchronization started
+2025-12-21 17:42 - INFO - Copied the file new new.py from /home/vafanaso/Veeam/src/1/2/3/ to /home/vafanaso/Veeam/replica/1/2/3/ 
+2025-12-21 17:42 - INFO - Deleted file deletr from /home/vafanaso/Veeam/replica/1/2/5/
+2025-12-21 17:42 - INFO - Removed /home/vafanaso/Veeam/replica/1/2/5/new.py form replica, due to different content, copied /home/vafanaso/Veeam/src/1/2/5/new.py to replica
+2025-12-21 17:42 - INFO - Synchronization finihed
+2025-12-21 17:43 - INFO - Synchronization started
+2025-12-21 17:43 - INFO - Created a folder 1 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-21 17:43 - INFO - Created a folder 2 from /home/vafanaso/Veeam/src/1/ to /home/vafanaso/Veeam/replica/1/
+2025-12-21 17:43 - INFO - Created a folder 3 from /home/vafanaso/Veeam/src/1/2/ to /home/vafanaso/Veeam/replica/1/2/
+2025-12-21 17:43 - INFO - Copied the file new new.py from /home/vafanaso/Veeam/src/1/2/3/ to /home/vafanaso/Veeam/replica/1/2/3/ 
+2025-12-21 17:43 - INFO - Copied the file 4.py from /home/vafanaso/Veeam/src/1/2/3/ to /home/vafanaso/Veeam/replica/1/2/3/ 
+2025-12-21 17:43 - INFO - Created a folder 5 from /home/vafanaso/Veeam/src/1/2/ to /home/vafanaso/Veeam/replica/1/2/
+2025-12-21 17:43 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/1/2/5/ to /home/vafanaso/Veeam/replica/1/2/5/ 
+2025-12-21 17:43 - INFO - Synchronization finihed
+2025-12-22 09:07 - INFO - Synchronization started
+2025-12-22 09:07 - INFO - Synchronization finihed
+2025-12-22 10:10 - INFO - Synchronization started
+2025-12-22 10:13 - INFO - Synchronization started
+2025-12-22 10:19 - INFO - Synchronization started
+2025-12-22 10:21 - INFO - Synchronization started
+2025-12-22 10:21 - INFO - Synchronization started
+2025-12-22 10:22 - INFO - Synchronization started
+2025-12-22 10:25 - ERROR - No source folder ant the /home/vafanaso/Veeam/src/
+2025-12-22 10:25 - INFO - Synchronization started
+2025-12-22 10:28 - ERROR - No source folder ant the /home/vafanaso/Veeam/src/
+2025-12-22 10:28 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/Veeam/replica/ does not exist
+2025-12-22 10:32 - INFO - Synchronization started
+2025-12-22 10:32 - INFO - Deleted file kio from /home/vafanaso/Veeam/replica/
+2025-12-22 10:32 - INFO - Deleted a folder 1 from /home/vafanaso/Veeam/replica/
+2025-12-22 10:32 - INFO - Synchronization finihed
+2025-12-22 10:32 - INFO - Synchronization started
+2025-12-22 10:32 - INFO - Copied the file helo.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-22 10:32 - INFO - Synchronization finihed
+2025-12-22 10:33 - ERROR - No source folder ant the /home/vafanaso/Veeam/src/
+2025-12-22 10:33 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/Veeam/replica/ does not exist
+2025-12-22 10:34 - ERROR - No replica folder ant the /home/vafanaso/Veeam/replica/
+2025-12-22 10:34 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/Veeam/replica/ does not exist
+2025-12-22 10:34 - INFO - Synchronization started
+2025-12-22 10:34 - INFO - Synchronization finihed
+2025-12-22 10:35 - INFO - Synchronization started
+2025-12-22 10:35 - INFO - Copied the file e;llo.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-22 10:35 - INFO - Created a folder myy from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 10:35 - INFO - Created a folder 2 from /home/vafanaso/Veeam/src/myy/ to /home/vafanaso/Veeam/replica/myy/
+2025-12-22 10:35 - INFO - Copied the file 1.py from /home/vafanaso/Veeam/src/myy/2/ to /home/vafanaso/Veeam/replica/myy/2/ 
+2025-12-22 10:35 - INFO - Copied the file 1.py from /home/vafanaso/Veeam/src/myy/ to /home/vafanaso/Veeam/replica/myy/ 
+2025-12-22 10:35 - INFO - Synchronization finihed
+2025-12-22 10:36 - INFO - Synchronization started
+2025-12-22 10:36 - INFO - Deleted a folder myy from /home/vafanaso/Veeam/replica/
+2025-12-22 10:36 - INFO - Deleted file e;llo.py from /home/vafanaso/Veeam/replica/
+2025-12-22 10:36 - INFO - Synchronization finihed
+2025-12-22 10:37 - INFO - Synchronization started
+2025-12-22 10:37 - INFO - Deleted file b.py from /home/vafanaso/Veeam/replica/
+2025-12-22 10:37 - INFO - Deleted file you.py from /home/vafanaso/Veeam/replica/
+2025-12-22 10:37 - INFO - Copied the file me.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-22 10:37 - INFO - Created a folder q from /home/vafanaso/Veeam/src/q/ to /home/vafanaso/Veeam/replica/q/
+2025-12-22 10:37 - INFO - Synchronization finihed
+2025-12-22 10:38 - INFO - Synchronization started
+2025-12-22 10:38 - INFO - Created a folder new from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 10:38 - INFO - Created a folder newnew from /home/vafanaso/Veeam/src/new/ to /home/vafanaso/Veeam/replica/new/
+2025-12-22 10:38 - INFO - Copied the file test.py from /home/vafanaso/Veeam/src/new/newnew/ to /home/vafanaso/Veeam/replica/new/newnew/ 
+2025-12-22 10:38 - INFO - Deleted file g.py from /home/vafanaso/Veeam/replica/q/q/
+2025-12-22 10:38 - INFO - Synchronization finihed
+2025-12-22 10:39 - INFO - Synchronization started
+2025-12-22 10:39 - INFO - Synchronization finihed
+2025-12-22 10:39 - INFO - Synchronization started
+2025-12-22 10:39 - INFO - Copied the file see>.py from /home/vafanaso/Veeam/src/new/newnew/ to /home/vafanaso/Veeam/replica/new/newnew/ 
+2025-12-22 10:39 - INFO - Synchronization finihed
+2025-12-22 11:20 - INFO - Synchronization started
+2025-12-22 11:20 - INFO - Synchronization finihed
+2025-12-22 11:20 - INFO - Synchronization started
+2025-12-22 11:20 - INFO - Deleted file see>.py from /home/vafanaso/Veeam/replica/new/newnew
+2025-12-22 11:20 - INFO - Synchronization finihed
+2025-12-22 11:20 - INFO - Synchronization started
+2025-12-22 11:20 - INFO - Copied a folder q from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 11:20 - INFO - Copied a folder q from /home/vafanaso/Veeam/src/q to /home/vafanaso/Veeam/replica/q
+2025-12-22 11:20 - INFO - Synchronization finihed
+2025-12-22 11:21 - INFO - Synchronization started
+2025-12-22 11:21 - INFO - Deleted a folder q from /home/vafanaso/Veeam/replica/
+2025-12-22 11:21 - INFO - Deleted a folder newnew from /home/vafanaso/Veeam/replica/new
+2025-12-22 11:21 - INFO - Synchronization finihed
+2025-12-22 11:21 - INFO - Synchronization started
+2025-12-22 11:21 - INFO - Synchronization finihed
+2025-12-22 11:21 - INFO - Synchronization started
+2025-12-22 11:21 - INFO - Copied a folder new from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 11:21 - INFO - Copied the file yo.py from /home/vafanaso/Veeam/src/new to /home/vafanaso/Veeam/replica/new 
+2025-12-22 11:21 - INFO - Synchronization finihed
+2025-12-22 11:22 - INFO - Synchronization started
+2025-12-22 11:22 - INFO - Removed /home/vafanaso/Veeam/replica/me.py form replica, due to different content, copied /home/vafanaso/Veeam/src/me.py to replica
+2025-12-22 11:22 - INFO - Removed /home/vafanaso/Veeam/replica/new/yo.py form replica, due to different content, copied /home/vafanaso/Veeam/src/new/yo.py to replica
+2025-12-22 11:22 - INFO - Synchronization finihed
+2025-12-22 11:25 - INFO - Synchronization started
+2025-12-22 11:25 - INFO - Deleted a folder hewf from /home/vafanaso/Veeam/replica/new
+2025-12-22 11:25 - INFO - Copied a folder wwf from /home/vafanaso/Veeam/src/new to /home/vafanaso/Veeam/replica/new
+2025-12-22 11:25 - INFO - Copied a folder meeee from /home/vafanaso/Veeam/src/new/wwf to /home/vafanaso/Veeam/replica/new/wwf
+2025-12-22 11:25 - INFO - Copied the file noooo.py from /home/vafanaso/Veeam/src/new/wwf/meeee to /home/vafanaso/Veeam/replica/new/wwf/meeee 
+2025-12-22 11:25 - INFO - Synchronization finihed
+2025-12-22 11:26 - INFO - Synchronization started
+2025-12-22 11:26 - INFO - Deleted a folder new from /home/vafanaso/Veeam/replica/
+2025-12-22 11:26 - INFO - Deleted file me.py from /home/vafanaso/Veeam/replica/
+2025-12-22 11:26 - INFO - Synchronization finihed
+2025-12-22 11:30 - INFO - Synchronization started
+2025-12-22 11:30 - INFO - Synchronization finihed
+2025-12-22 11:30 - INFO - Synchronization started
+2025-12-22 11:30 - INFO - Copied the file ji.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-22 11:30 - INFO - Synchronization finihed
+2025-12-22 11:42 - INFO - Synchronization started
+2025-12-22 11:42 - INFO - Copied the file ji.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2025-12-22 11:42 - INFO - Synchronization finihed
+2025-12-22 11:42 - INFO - Synchronization started
+2025-12-22 11:42 - INFO - Deleted file ji.py from /home/vafanaso/Veeam/replica/
+2025-12-22 11:42 - INFO - Synchronization finihed
