@@ -191,6 +191,11 @@ def folder_sync(src_path:str,replica_path:str,sync_count:int, interval:float, lo
 
 
 def arguments_count_validity(argument_count) -> bool:
+    """
+    functon checks if enough arguments were passed to the program
+    :param argument_count:
+    :return:bool
+    """
     if argument_count != 6:
         logger = log_setup()
         logger.error("Not enough parameters")
@@ -198,7 +203,13 @@ def arguments_count_validity(argument_count) -> bool:
     return True
 
 
-def numbers_value_check(logger):
+def numbers_value_check(logger)->bool:
+    """
+    function checks if number arguments were passed properly
+    :param logger:
+    :return: bool
+    """
+
     try:
         interval = float(sys.argv[3])
     except ValueError:
@@ -215,17 +226,14 @@ def numbers_value_check(logger):
 
 def main():
     """
-    -takes arguments from CL
-    -checks if enough arguments were passed: log.error console message if not
-    -checks if paths have '/' in the end
-    -setups a logger
-    -checks if values for interval and sync count are valid
-    -checks if paths are correct
-    -starts a loop of in range of  sync_count
-    -syncs 2 folders
-    -sleeps for the given interval
+    this main function combines and gives a working folder synchronizer
+    (a lot of checks and validations placed int the functions themself)
+    -checks if  a right amount of arguments is passed to the program
+    - checking if there is '/' in the end of paths, adding if not
+    - checks the values of interval and synchronization_count
+    - synchronizes folders if checks were passed
 
-    :return: synchronizes folders if they exist
+    :return: synchronizes folders
     """
     if arguments_count_validity(len(sys.argv)):
         scrip_name = sys.argv[0]
