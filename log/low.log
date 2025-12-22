@@ -1,0 +1,46 @@
+2025-12-22 13:26 - INFO - Synchronization started
+2025-12-22 13:26 - INFO - Synchronization finihed
+2025-12-22 13:27 - ERROR - Invalid Values for Interval or synchronization amount
+2025-12-22 13:27 - INFO - Synchronization started
+2025-12-22 14:08 - INFO - Synchronization started
+2025-12-22 14:08 - INFO - Synchronization finihed
+2025-12-22 14:08 - INFO - Synchronization started
+2025-12-22 14:08 - INFO - Copied a folder hello  from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 14:08 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/hello  to /home/vafanaso/Veeam/replica/hello  
+2025-12-22 14:08 - INFO - Synchronization finihed
+2025-12-22 14:09 - INFO - Synchronization started
+2025-12-22 14:09 - INFO - Deleted file hvjh.py from /home/vafanaso/Veeam/replica/
+2025-12-22 14:09 - INFO - Deleted file nw.py from /home/vafanaso/Veeam/replica/
+2025-12-22 14:09 - INFO - Deleted a folder hello  from /home/vafanaso/Veeam/replica/
+2025-12-22 14:09 - INFO - Synchronization finihed
+2025-12-22 14:10 - INFO - Synchronization started
+2025-12-22 14:10 - INFO - Deleted file afe.py from /home/vafanaso/Veeam/replica/
+2025-12-22 14:10 - INFO - Synchronization finihed
+2025-12-22 14:11 - INFO - Synchronization started
+2025-12-22 14:11 - INFO - Copied a folder new from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2025-12-22 14:11 - INFO - Copied a folder new from /home/vafanaso/Veeam/src/new to /home/vafanaso/Veeam/replica/new
+2025-12-22 14:11 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/new/new to /home/vafanaso/Veeam/replica/new/new 
+2025-12-22 14:11 - INFO - Copied the file new.py from /home/vafanaso/Veeam/src/new to /home/vafanaso/Veeam/replica/new 
+2025-12-22 14:11 - INFO - Synchronization finihed
+2025-12-22 14:11 - INFO - Synchronization started
+2025-12-22 14:11 - INFO - Removed /home/vafanaso/Veeam/replica/new/new/new.py form replica, due to different content, copied /home/vafanaso/Veeam/src/new/new/new.py to replica
+2025-12-22 14:11 - INFO - Synchronization finihed
+2025-12-22 14:11 - INFO - Synchronization started
+2025-12-22 14:11 - INFO - Synchronization finihed
+2025-12-22 14:12 - INFO - Synchronization started
+2025-12-22 14:12 - INFO - Synchronization finihed
+2025-12-22 14:12 - ERROR - No source folder ant the /home/vafanaso/Veefam/src/
+2025-12-22 14:12 - INFO - Unable to start syncro, /home/vafanaso/Veefam/src/ or /home/vafanaso/Veeam/replica/ does not exist
+2025-12-22 14:13 - ERROR - No replica folder ant the /home/vafanaso/Veeadm/replica/
+2025-12-22 14:13 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/Veeadm/replica/ does not exist
+2025-12-22 14:13 - ERROR - No replica folder ant the 4/
+2025-12-22 14:13 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or 4/ does not exist
+2025-12-22 14:13 - INFO - Synchronization started
+2025-12-22 14:13 - INFO - Synchronization finihed
+2025-12-22 14:16 - ERROR - Not valid amount of synchronization, should be int type
+2025-12-22 14:17 - ERROR - Not valid interval type, should be float type
+2025-12-22 14:17 - ERROR - Not valid interval type, should be float type
+2025-12-22 14:17 - INFO - Synchronization started
+2025-12-22 14:17 - INFO - Synchronization finihed
+2025-12-22 14:17 - INFO - Synchronization started
+2025-12-22 14:17 - INFO - Synchronization finihed

@@ -5,6 +5,7 @@ import hashlib
 import shutil
 import logging
 
+
 def folder_check(src_path:str, replica_path:str, logger) -> bool:
     """
 
@@ -24,12 +25,11 @@ def folder_check(src_path:str, replica_path:str, logger) -> bool:
 
     return True
 
-
-def log_setup(log_path):
+def log_setup():
     """
-    seting up the logger for log file and console
-    :param log_path:
-    :return: logger
+    this loger setup is created in case that not enough arguments will be passed to the program,
+    in this case we still have to give a valid log message
+    :return logger: only for the console
     """
     logger = logging.getLogger('sync')
     logger.setLevel(logging.INFO)
@@ -37,12 +37,31 @@ def log_setup(log_path):
     formatter = logging.Formatter("{asctime} - {levelname} - {message}",style="{",datefmt="%Y-%m-%d %H:%M", )
 
     console_handler = logging.StreamHandler()
-    file_handler = logging.FileHandler(log_path)
     console_handler.setFormatter(formatter)
-    file_handler.setFormatter(formatter)
     if not logger.handlers:
         logger.addHandler(console_handler)
-        logger.addHandler(file_handler)
+    return logger
+
+def log_setup_wth_logpath(log_path):
+    """
+    this function is called only in case that enough arguments were passed to the program
+    Setting up the logger for log file and console, checking if log_path is valid,
+    creating log_file if doesnt exist
+    :param log_path:
+    :return: logger
+    """
+    logger = log_setup()
+    formatter = logging.Formatter("{asctime} - {levelname} - {message}",style="{",datefmt="%Y-%m-%d %H:%M", )
+
+    #Valid log path check, if not, giving an error and working with console only
+    try:
+        file_handler = logging.FileHandler(log_path)
+        file_handler.setFormatter(formatter)
+        if len(logger.handlers) == 1:
+            logger.addHandler(file_handler)
+    except FileNotFoundError:
+        logger.error("Invalid log path")
+
     return logger
 
 #makaing a hash for file
@@ -151,7 +170,7 @@ def hash_check(src_path:str, dst_path:str, logger) -> None:
 
 
 
-def folder_sync(src_path:str, dst_path:str, logger):
+def folder_sync(src_path:str,replica_path:str,sync_count:int, interval:float, logger) -> None:
     """
     function combines copy diff and hash check.
 
@@ -159,21 +178,48 @@ def folder_sync(src_path:str, dst_path:str, logger):
     :return: None, the function doesn't return anything, but makes dst an exact copy of src
     """
 
-    copy_differnce(src_path,dst_path, logger)
+    if folder_check(src_path, replica_path, logger):
+        logger.info("Synchronization started")
+        for i in range(sync_count):
+            copy_differnce(src_path, replica_path, logger)
+            hash_check(src_path, replica_path, logger)
+            if i < (sync_count - 1):
+                time.sleep(interval)
+        logger.info("Synchronization finihed")
+    else:
+        logger.info(f"Unable to start syncro, {src_path} or {replica_path} does not exist")
 
 
-    hash_check(src_path,dst_path, logger)
+def arguments_count_validity(argument_count) -> bool:
+    if argument_count != 6:
+        logger = log_setup()
+        logger.error("Not enough parameters")
+        return False
+    return True
 
 
-
+def numbers_value_check(logger):
+    try:
+        interval = float(sys.argv[3])
+    except ValueError:
+        logger.error("Not valid interval type, should be float type")
+        return False
+    try:
+        sync_count = int(sys.argv[4])
+    except ValueError:
+        logger.error("Not valid amount of synchronization, should be int type")
+        return False
+    return True
 
 
 
 def main():
     """
-    -akes arguments from CL
+    -takes arguments from CL
+    -checks if enough arguments were passed: log.error console message if not
     -checks if paths have '/' in the end
     -setups a logger
+    -checks if values for interval and sync count are valid
     -checks if paths are correct
     -starts a loop of in range of  sync_count
     -syncs 2 folders
@@ -181,32 +227,19 @@ def main():
 
     :return: synchronizes folders if they exist
     """
-    scrip_name = sys.argv[0]
-    # checking if there is '/' in the end of paths, adding if not
-    src_path = sys.argv[1] + '/' if sys.argv[1][-1] != '/' else sys.argv[1]
-    replica_path = sys.argv[2] + '/' if sys.argv[2][-1] != '/' else sys.argv[2]
-    interval = float(sys.argv[3])
-    sync_count = int(sys.argv[4])
-    log_path = sys.argv[5]
+    if arguments_count_validity(len(sys.argv)):
+        scrip_name = sys.argv[0]
+        # checking if there is '/' in the end of paths, adding if not
+        src_path = sys.argv[1] + '/' if sys.argv[1][-1] != '/' else sys.argv[1]
+        replica_path = sys.argv[2] + '/' if sys.argv[2][-1] != '/' else sys.argv[2]
 
+        log_path = sys.argv[5]
+        logger = log_setup_wth_logpath(log_path)
+        if numbers_value_check(logger):
+            interval = float(sys.argv[3])
+            sync_count = int(sys.argv[4])
 
-
-
-
-    logger = log_setup(log_path)
-
-
-    #checking if folders do exist
-    if folder_check(src_path,replica_path,logger):
-        logger.info("Synchronization started")
-        for  i in range(sync_count):
-            folder_sync(src_path, replica_path,logger)
-            if i < (sync_count - 1):
-                time.sleep(interval)
-        logger.info("Synchronization finihed")
-    else:
-        logger.info(f"Unable to start syncro, {src_path} or {replica_path} does not exist")
-
+            folder_sync(src_path,replica_path,sync_count,interval,logger)
 
 if __name__ == "__main__":
     main()
