@@ -1,0 +1,10 @@
+2026-01-18 12:30 - INFO - Synchronization started
+2026-01-18 12:30 - INFO - Synchronization finihed
+2026-01-18 12:31 - INFO - Synchronization started
+2026-01-18 12:31 - INFO - Deleted file new.py from /home/vafanaso/Veeam/replica/
+2026-01-18 12:31 - INFO - Deleted file .sd.swp from /home/vafanaso/Veeam/replica/
+2026-01-18 12:31 - INFO - Deleted file sd from /home/vafanaso/Veeam/replica/
+2026-01-18 12:31 - INFO - Deleted a folder new from /home/vafanaso/Veeam/replica/
+2026-01-18 12:31 - INFO - Synchronization finihed
+2026-01-18 12:34 - ERROR - No replica folder ant the /home/vafanaso/hVeeam/replica/
+2026-01-18 12:34 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/hVeeam/replica/ does not exist

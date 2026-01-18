@@ -1,0 +1,12 @@
+2026-01-04 13:09 - INFO - Synchronization started
+2026-01-04 13:09 - INFO - Deleted a folder new from /home/vafanaso/Veeam/replica/
+2026-01-04 13:09 - INFO - Removed /home/vafanaso/Veeam/replica/new.py form replica, due to different content, copied /home/vafanaso/Veeam/src/new.py to replica
+2026-01-04 13:09 - INFO - Synchronization finihed
+2026-01-04 13:09 - INFO - Synchronization started
+2026-01-04 13:09 - INFO - Copied the file newfile.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-04 13:09 - INFO - Synchronization finihed
+2026-01-04 13:10 - INFO - Synchronization started
+2026-01-04 13:10 - INFO - Deleted file newfile.py from /home/vafanaso/Veeam/replica/
+2026-01-04 13:10 - INFO - Copied a folder new from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2026-01-04 13:10 - INFO - Copied the file nwnwnw.py from /home/vafanaso/Veeam/src/new to /home/vafanaso/Veeam/replica/new 
+2026-01-04 13:10 - INFO - Synchronization finihed

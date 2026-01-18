@@ -6,14 +6,14 @@ import shutil
 import logging
 
 
-def folder_check(src_path:str, replica_path:str, logger) -> bool:
+def folder_check(src_path:str, replica_path:str, logger: logging.Logger) -> bool:
     """
 
     folder_check function checks if the paths are valid
 
     :param src_path:str -
     :param replica_path: str -
-    :param logger:
+    :param  logger: logging.Logger - logger
     :return: True if paths are valid and false if not
     """
     if not os.path.isdir(src_path):
@@ -46,7 +46,7 @@ def log_setup_wth_logpath(log_path):
     """
     this function is called only in case that enough arguments were passed to the program
     Setting up the logger for log file and console, checking if log_path is valid,
-    creating log_file if doesnt exist
+    creating log_file if it doesn't exist
     :param log_path:
     :return: logger
     """
@@ -81,13 +81,14 @@ def hashing(file_path:str) -> str:
 
 
 
-def copy_differnce(src_path:str, replica_path:str, logger) -> None:
+def copy_difference(src_path:str, replica_path:str, logger: logging.Logger) -> None:
     """
-    Function is designed to copy files from src if they are absent in dst,
+    Function copies files from src if they are absent in dst,
     and to delete content that exists only in dst.
 
     :param src_path:str - path to src folder
     :param replica_path:str - path to replica or dst folder
+    :param  logger: logging.Logger - logger
     :return: None
     """
 
@@ -101,7 +102,7 @@ def copy_differnce(src_path:str, replica_path:str, logger) -> None:
         # a set of files/folders that exist only in src, and need to be added to dst
         diff_src = set(src_content) - set(replica_content)
 
-        # a set of files that are unoque to both folders
+        # a set of files that are unique for both folders
         dif_src_and_dst = set(src_content) ^ set(replica_content)
 
         # a set of name of the files that exist only in dst folder, and need to be deleted
@@ -131,22 +132,23 @@ def copy_differnce(src_path:str, replica_path:str, logger) -> None:
                     os.mkdir(new_replica_path)
                     logger.info(f'Copied a folder {name} from {src_path} to {replica_path}')
                     #Recursive folder_synchronization
-                    copy_differnce(new_src_path, new_replica_path, logger)
+                    copy_difference(new_src_path, new_replica_path, logger)
     else:
         for folder_name in src_content:
             new_src_path = os.path.join(src_path, folder_name)
             new_replica_path = os.path.join(replica_path, folder_name)
             if os.path.isdir(new_src_path) :
-                copy_differnce(new_src_path, new_replica_path, logger)
+                copy_difference(new_src_path, new_replica_path, logger)
 
 
 
-def hash_check(src_path:str, dst_path:str, logger) -> None:
+def hash_check(src_path:str, dst_path:str, logger: logging.Logger) -> None:
     """
     Function goes through all files and compares their hash in src and in replica, if not the same,
     delete the file/folder from replica and copy it from src
     :param src_path:srt - path to src folder
     :param dst_path:str - path to replica or dst folder
+    :param  logger: logging.Logger - logger
     :return: None
     """
     #Going through the content and comparing their hash, deleting and copying if hash is different
@@ -170,24 +172,28 @@ def hash_check(src_path:str, dst_path:str, logger) -> None:
 
 
 
-def folder_sync(src_path:str,replica_path:str,sync_count:int, interval:float, logger) -> None:
+def folder_sync(src_path:str,replica_path:str,sync_count:int, interval:float, logger: logging.Logger) -> None:
     """
     function combines copy diff and hash check.
 
-    :param: srt_path, dst_path (str) - the paths to the src and dst folders
+    :param src_path:str - path to the src folder
+    :param replica_path:str - a path to replica folder
+    :param  logger: logging.Logger - logger
+    :param sync_count:int - a number of times that synchronization will run
+    :param interval:float - a time interval between the synchronizations
     :return: None, the function doesn't return anything, but makes dst an exact copy of src
     """
 
     if folder_check(src_path, replica_path, logger):
         logger.info("Synchronization started")
         for i in range(sync_count):
-            copy_differnce(src_path, replica_path, logger)
+            copy_difference(src_path, replica_path, logger)
             hash_check(src_path, replica_path, logger)
             if i < (sync_count - 1):
                 time.sleep(interval)
         logger.info("Synchronization finihed")
     else:
-        logger.info(f"Unable to start syncro, {src_path} or {replica_path} does not exist")
+        logger.info(f"Unable to start synchronization, {src_path} or {replica_path} does not exist")
 
 
 def arguments_count_validity(argument_count) -> bool:
@@ -203,7 +209,7 @@ def arguments_count_validity(argument_count) -> bool:
     return True
 
 
-def numbers_value_check(logger)->bool:
+def numbers_value_check(logger: logging.Logger)->bool:
     """
     function checks if number arguments were passed properly
     :param logger:
@@ -218,7 +224,7 @@ def numbers_value_check(logger)->bool:
     try:
         sync_count = int(sys.argv[4])
     except ValueError:
-        logger.error("Not valid amount of synchronization, should be int type")
+        logger.error("Not valid type of synchronization count, should be int type")
         return False
     return True
 
@@ -227,8 +233,8 @@ def numbers_value_check(logger)->bool:
 def main():
     """
     this main function combines and gives a working folder synchronizer
-    (a lot of checks and validations placed int the functions themself)
-    -checks if  a right amount of arguments is passed to the program
+    (a lot of checks and validations placed int the functions themselves)
+    - checks if a right amount of arguments is passed to the program
     - checking if there is '/' in the end of paths, adding if not
     - checks the values of interval and synchronization_count
     - synchronizes folders if checks were passed

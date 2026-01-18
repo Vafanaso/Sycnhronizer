@@ -1,0 +1,21 @@
+2026-01-04 13:10 - INFO - Synchronization started
+2026-01-04 13:10 - INFO - Synchronization finihed
+2026-01-04 13:10 - ERROR - No source folder ant the /home/vafanaso/am/src/
+2026-01-04 13:10 - INFO - Unable to start syncro, /home/vafanaso/am/src/ or /home/vafanaso/Veeam/replica/ does not exist
+2026-01-04 13:11 - ERROR - Not valid interval type, should be float type
+2026-01-04 13:13 - INFO - Synchronization started
+2026-01-04 13:13 - INFO - Copied the file 1 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-04 13:13 - INFO - Synchronization finihed
+2026-01-04 13:13 - INFO - Synchronization started
+2026-01-04 13:13 - INFO - Copied the file 0 from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-04 13:13 - INFO - Synchronization finihed
+2026-01-04 13:17 - INFO - Synchronization started
+2026-01-04 13:17 - INFO - Copied the file sd from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-04 13:17 - INFO - Synchronization finihed
+2026-01-04 13:18 - INFO - Synchronization started
+2026-01-04 13:18 - INFO - Synchronization finihed
+2026-01-04 13:18 - INFO - Synchronization started
+2026-01-04 13:18 - INFO - Synchronization finihed
+2026-01-04 13:27 - INFO - Synchronization started
+2026-01-04 13:27 - INFO - Copied the file .sd.swp from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-04 13:27 - INFO - Synchronization finihed
