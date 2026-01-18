@@ -8,3 +8,22 @@
 2026-01-18 12:31 - INFO - Synchronization finihed
 2026-01-18 12:34 - ERROR - No replica folder ant the /home/vafanaso/hVeeam/replica/
 2026-01-18 12:34 - INFO - Unable to start syncro, /home/vafanaso/Veeam/src/ or /home/vafanaso/hVeeam/replica/ does not exist
+2026-01-18 13:09 - ERROR - No replica folder ant the /home/vafanaso/hVeeam/replica/
+2026-01-18 13:09 - INFO - Unable to start synchronization, /home/vafanaso/Veeam/src/ or /home/vafanaso/hVeeam/replica/ does not exist
+2026-01-18 13:09 - INFO - Synchronization started
+2026-01-18 13:09 - INFO - Synchronization finihed
+2026-01-18 13:12 - INFO - Synchronization started
+2026-01-18 13:12 - INFO - Synchronization finihed
+2026-01-18 13:13 - INFO - Synchronization started
+2026-01-18 13:13 - INFO - Copied the file me.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-18 13:13 - INFO - Synchronization finihed
+2026-01-18 15:20 - INFO - Synchronization started
+2026-01-18 15:20 - INFO - Removed /home/vafanaso/Veeam/replica/me.py form replica, due to different content, copied /home/vafanaso/Veeam/src/me.py to replica
+2026-01-18 15:20 - INFO - Synchronization finihed
+2026-01-18 15:22 - INFO - Synchronization started
+2026-01-18 15:22 - INFO - Deleted  delete  from /home/vafanaso/Veeam/replica/
+2026-01-18 15:22 - INFO - Copied a folder meme from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2026-01-18 15:22 - INFO - Copied a folder efw from /home/vafanaso/Veeam/src/meme to /home/vafanaso/Veeam/replica/meme
+2026-01-18 15:22 - INFO - Copied the file new  from /home/vafanaso/Veeam/src/meme/efw to /home/vafanaso/Veeam/replica/meme/efw 
+2026-01-18 15:22 - INFO - Copied the file hello.py from /home/vafanaso/Veeam/src/meme to /home/vafanaso/Veeam/replica/meme 
+2026-01-18 15:22 - INFO - Synchronization finihed
