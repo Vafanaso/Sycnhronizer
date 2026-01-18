@@ -241,7 +241,7 @@ def hash_check(src_path:str, dst_path:str, logger: logging.Logger) -> bool:
     :param src_path:srt - path to src folder
     :param dst_path:str - path to replica or dst folder
     :param  logger: logging.Logger - logger
-    :return: None
+    :return: bool - True if no problem occurred and operation finished, False if permission problem occurred
     """
     #Going through the content and comparing their hash, deleting and copying if hash is different
     for name in os.listdir(src_path):
@@ -345,7 +345,7 @@ def main():
     - checks the values of interval and synchronization_count
     - synchronizes folders if checks were passed
 
-    :return: synchronizes folders
+    :return: synchronizes folders or Log with problems that occurred
     """
     if arguments_count_validity(len(sys.argv)):
         scrip_name = sys.argv[0]
