@@ -1,0 +1,37 @@
+2026-01-19 11:42 - ERROR - Path does not exist: /home/vafanaso/Veeam/src/
+2026-01-19 11:42 - ERROR - Source folder contains files/folders with insufficient read permissions
+2026-01-19 11:43 - INFO - Synchronization started
+2026-01-19 11:43 - INFO - Deleted file DELETE.py from /home/vafanaso/Veeam/replica/
+2026-01-19 11:43 - INFO - Deleted a folder DELETE  from /home/vafanaso/Veeam/replica/
+2026-01-19 11:43 - INFO - Copied a folder new  from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2026-01-19 11:43 - INFO - Copied the file mw.py from /home/vafanaso/Veeam/src/new  to /home/vafanaso/Veeam/replica/new  
+2026-01-19 11:43 - INFO - Synchronization finihed
+2026-01-19 11:44 - ERROR - No read permission for: /home/vafanaso/Veeam/src/new /mw.py
+2026-01-19 11:44 - ERROR - Source folder contains files/folders with insufficient read permissions
+2026-01-19 11:45 - ERROR - No write permission for: /home/vafanaso/Veeam/replica/new/mw.py
+2026-01-19 11:45 - ERROR - Replica folder contains files/folders with insufficient write permissions
+2026-01-19 11:46 - INFO - Synchronization started
+2026-01-19 11:46 - INFO - Deleted a folder new from /home/vafanaso/Veeam/replica/
+2026-01-19 11:46 - INFO - Copied a folder new  from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2026-01-19 11:46 - INFO - Copied the file mw.py from /home/vafanaso/Veeam/src/new  to /home/vafanaso/Veeam/replica/new  
+2026-01-19 11:46 - INFO - Synchronization finihed
+2026-01-19 11:47 - ERROR - Not valid interval type, should be float type
+2026-01-19 11:47 - INFO - Synchronization started
+2026-01-19 11:47 - INFO - Synchronization finihed
+2026-01-19 11:47 - ERROR - Path does not exist: /home/vafanaso/Veeam/srgc/
+2026-01-19 11:47 - ERROR - Source folder contains files/folders with insufficient read permissions
+2026-01-19 11:49 - ERROR - Path does not exist: /home/vafanaso/Veeam/srgc/
+2026-01-19 11:49 - ERROR - Path does not exist: /home/vafanaso/Veeam/srgc/
+2026-01-19 11:49 - INFO - Synchronization started
+2026-01-19 11:49 - INFO - Synchronization finihed
+2026-01-19 11:49 - ERROR - Path does not exist: /home/vafanaso/Veeam/repflica/
+2026-01-19 11:50 - INFO - Synchronization started
+2026-01-19 11:50 - INFO - Synchronization finihed
+2026-01-19 11:52 - INFO - Synchronization started
+2026-01-19 11:52 - INFO - Deleted a folder new  from /home/vafanaso/Veeam/replica/
+2026-01-19 11:52 - INFO - Synchronization finihed
+2026-01-19 11:55 - INFO - Synchronization started
+2026-01-19 11:55 - INFO - Synchronization finihed
+2026-01-19 11:55 - INFO - Synchronization started
+2026-01-19 11:55 - INFO - Copied the file memq.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-19 11:55 - INFO - Synchronization finihed
