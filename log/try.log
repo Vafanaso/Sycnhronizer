@@ -27,3 +27,11 @@
 2026-01-18 15:22 - INFO - Copied the file new  from /home/vafanaso/Veeam/src/meme/efw to /home/vafanaso/Veeam/replica/meme/efw 
 2026-01-18 15:22 - INFO - Copied the file hello.py from /home/vafanaso/Veeam/src/meme to /home/vafanaso/Veeam/replica/meme 
 2026-01-18 15:22 - INFO - Synchronization finihed
+2026-01-18 15:44 - INFO - Synchronization started
+2026-01-18 15:44 - INFO - Synchronization finished
+2026-01-18 15:45 - INFO - Synchronization started
+2026-01-18 15:45 - INFO - Deleted  meme from /home/vafanaso/Veeam/replica/
+2026-01-18 15:45 - INFO - Copied a folder l from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/
+2026-01-18 15:45 - INFO - Copied the file jhvkjvlhv from /home/vafanaso/Veeam/src/l to /home/vafanaso/Veeam/replica/l 
+2026-01-18 15:45 - INFO - Copied the file neee.py from /home/vafanaso/Veeam/src/ to /home/vafanaso/Veeam/replica/ 
+2026-01-18 15:45 - INFO - Synchronization finished

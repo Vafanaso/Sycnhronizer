@@ -1,0 +1,26 @@
+2026-01-18 15:52 - INFO - Synchronization started
+2026-01-18 15:52 - INFO - Deleted  delete  from /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:52 - INFO - Deleted  No_write from /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:52 - INFO - Copied a folder no_r from /home/vafanaso/Veeam/src_perm/ to /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:52 - ERROR - No permission to read from /home/vafanaso/Veeam/src_perm/no_r
+2026-01-18 15:52 - ERROR - Synchronization was not completed
+2026-01-18 15:52 - INFO - Synchronization started
+2026-01-18 15:52 - ERROR -  No write permission in /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:52 - ERROR - Synchronization was not completed
+2026-01-18 15:54 - INFO - Synchronization started
+2026-01-18 15:54 - ERROR -  No write permission in /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:54 - ERROR - Synchronization was not completed
+2026-01-18 15:57 - INFO - Synchronization started
+2026-01-18 15:57 - INFO - Copied a folder regular  from /home/vafanaso/Veeam/src_perm/ to /home/vafanaso/Veeam/replica_perm/
+2026-01-18 15:57 - INFO - Copied the file just_a_file.py from /home/vafanaso/Veeam/src_perm/regular  to /home/vafanaso/Veeam/replica_perm/regular  
+2026-01-18 15:57 - ERROR -  No write permission in /home/vafanaso/Veeam/replica_perm/ for /home/vafanaso/Veeam/src_perm/no_read.py
+2026-01-18 15:57 - ERROR - Synchronization was not completed
+2026-01-18 15:59 - INFO - Synchronization started
+2026-01-18 15:59 - INFO - Copied the file no_read.py from /home/vafanaso/Veeam/src_perm/ to /home/vafanaso/Veeam/replica_perm/ 
+2026-01-18 15:59 - INFO - Removed /home/vafanaso/Veeam/replica_perm/no_write.py form replica, due to different content, copied /home/vafanaso/Veeam/src_perm/no_write.py to replica
+2026-01-18 16:15 - INFO - Synchronization started
+2026-01-18 16:15 - INFO - Copied the file file.py from /home/vafanaso/Veeam/src_perm/no_r to /home/vafanaso/Veeam/replica_perm/no_r 
+2026-01-18 16:15 - INFO - Synchronization finished
+2026-01-18 16:17 - ERROR - No read permission for: /home/vafanaso/Veeam/src_perm/no_write.py
+2026-01-18 16:17 - ERROR - Source folder contains files/folders with insufficient read permissions
+2026-01-18 16:17 - ERROR - Synchronization was not completed

@@ -66,8 +66,44 @@ def safe_copy(src_filepath:str, replica_path:str, logger: logging.Logger) -> boo
         shutil.copy(src_filepath, replica_path)
         return True
     except PermissionError:
-        logger.error(f" No write permission in {replica_path}")
+        logger.error(f" No write permission in {replica_path} for {src_filepath}")
         return False
+
+
+def permissions_check(path:str, must_write:bool, logger:logging.Logger) -> bool:
+    """
+    Recursively checks if all files/folders in the given path have needed permissions
+    :param - must_write True checks both read and write permissions, False checks read permissions only
+    :param path:str - given path to files/folders
+    Returns False if any file/folder cannot be accessed as needed.
+    """
+    if not os.path.exists(path):
+        logger.error(f"Path does not exist: {path}")
+        return False
+
+    # Check read permission
+    if not os.access(path, os.R_OK):
+        logger.error(f"No read permission for: {path}")
+        return False
+
+    # Check write permission if required
+    if must_write and not os.access(path, os.W_OK):
+        logger.error(f"No write permission for: {path}")
+        return False
+
+    # If it's a directory, check contents recursively
+    if os.path.isdir(path):
+        try:
+            for item in os.listdir(path):
+                item_path = os.path.join(path, item)
+                if not permissions_check(item_path, must_write, logger):
+                    return False
+        except PermissionError:
+            logger.error(f"No permission to access directory: {path}")
+            return False
+
+    return True
+
 
 
 def folder_check(src_path:str, replica_path:str, logger: logging.Logger) -> bool:
@@ -167,8 +203,6 @@ def copy_difference(src_path:str, replica_path:str, logger: logging.Logger) -> b
     # Creating a lists of content in both folders
     src_content = safe_listdir(src_path, logger)
     replica_content = safe_listdir(replica_path,logger)
-    # src_content = os.listdir(src_path)
-    # replica_content = os.listdir(replica_path)
 
     if src_content is None or replica_content is None:
         return False
@@ -190,13 +224,6 @@ def copy_difference(src_path:str, replica_path:str, logger: logging.Logger) -> b
         if len(to_delete) != 0:
             for name in to_delete:
                 delete_replica_path = os.path.join(replica_path, name)
-                # checking if we need to remove folder or file
-                # if os.path.isdir(delete_replica_path):
-                #     shutil.rmtree(delete_replica_path)
-                #     logger.info(f"Deleted a folder {name} from {replica_path}")
-                # else:
-                #     os.remove(delete_replica_path)
-                #     logger.info(f"Deleted file {name} from {replica_path}")
                 if not safe_remove(delete_replica_path, logger):
                     return False
                 logger.info(f"Deleted  {name} from {replica_path}")
@@ -212,13 +239,11 @@ def copy_difference(src_path:str, replica_path:str, logger: logging.Logger) -> b
                 if not os.path.isdir(new_src_path):
                     if not safe_copy(new_src_path,replica_path, logger):
                         return False
-                    # shutil.copy(new_src_path, replica_path)
                     logger.info(f'Copied the file {name} from {src_path} to {replica_path} ')
                 elif os.path.isdir(new_src_path):
                     new_replica_path = os.path.join(replica_path,name)
                     if not safe_mkdir(new_replica_path, logger):
                         return False
-                    # os.mkdir(new_replica_path)
                     logger.info(f'Copied a folder {name} from {src_path} to {replica_path}')
                     #Recursive folder_synchronization
                     if not copy_difference(new_src_path, new_replica_path, logger):
@@ -261,10 +286,8 @@ def hash_check(src_path:str, dst_path:str, logger: logging.Logger) -> bool:
                 continue
             else:
                 #if files are not the same, remove it from replica and copy from src
-                # os.remove(current_dst_filepath)
                 if not safe_remove(current_dst_filepath, logger):
                     return False
-                # shutil.copy(current_src_filepath, dst_path)
                 if not safe_copy(current_src_filepath, dst_path, logger):
                     return False
                 logger.info(f'Removed {current_dst_filepath} form replica, due to different content, copied {current_src_filepath} to replica')
@@ -285,6 +308,15 @@ def folder_sync(src_path:str,replica_path:str,sync_count:int, interval:float, lo
     :param interval:float - a time interval between the synchronizations
     :return: bool -  returns true if synchronization was successful and False if not
     """
+
+    # Fail-fast permission check
+    if not permissions_check(src_path, must_write=False, logger=logger):
+        logger.error("Source folder contains files/folders with insufficient read permissions")
+        return False
+
+    if not permissions_check(replica_path, must_write=True, logger=logger):
+        logger.error("Replica folder contains files/folders with insufficient write permissions")
+        return False
 
     if folder_check(src_path, replica_path, logger):
         logger.info("Synchronization started")
